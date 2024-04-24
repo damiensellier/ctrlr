@@ -3,7 +3,7 @@ Source/Misc/boost/**
 !Source/Misc/boost/boost.zip
 
 Builds/*/*/*
-
+/.vs
 CMakeFiles
 CMakeCache.txt
 .DS_store
