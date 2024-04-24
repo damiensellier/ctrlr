@@ -377,16 +377,20 @@ void CtrlrSysexProcessor::checksumRolandJp8080(const CtrlrSysexToken token, Midi
 	*/
 
 	const int startByte = token.getPosition() - token.getAdditionalData();
-	double chTotal		= 0.0;
+	int checkSum = 0;
 	uint8 *ptr	= (uint8 *)m.getRawData();
 
 	for (int i=startByte; i<token.getPosition(); i++)
 	{
-		chTotal = chTotal + *(ptr+i);
+		checkSum = checkSum + *(ptr+i);
 	}
-	const double remainder	= fmod(chTotal, 128);
-	const uint8 ch			= (uint8)(remainder ? (128 - remainder) : 0);
-	*(ptr+token.getPosition())   = ch;
+	//const double remainder	= fmod(chTotal, 128);
+	//const uint8 ch			= (uint8)(remainder ? (128 - remainder) : 0);
+	//checkSum &= 0x7F; /* Clamp to 7 bits */
+	checkSum = ~checkSum;
+	++checkSum; /* This and the above operation take the two's complement */
+	checkSum &= 0x7F; /* Clamp to 7 bits */
+	*(ptr+token.getPosition())   = checkSum;
 }
 
 void CtrlrSysexProcessor::checksumWaldorfRackAttack(const CtrlrSysexToken token, MidiMessage &m)
