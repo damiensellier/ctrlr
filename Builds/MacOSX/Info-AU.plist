@@ -8,19 +8,19 @@
     <key>CFBundleIconFile</key>
     <string></string>
     <key>CFBundleIdentifier</key>
-    <string>com.instigator.Ctrlr</string>
+    <string>com.CtrlrX.CtrlrX</string>
     <key>CFBundleName</key>
-    <string>Ctrlr</string>
+    <string>CtrlrX</string>
     <key>CFBundleDisplayName</key>
-    <string>Ctrlr</string>
+    <string>CtrlrX</string>
     <key>CFBundlePackageType</key>
     <string>BNDL</string>
     <key>CFBundleSignature</key>
     <string>????</string>
     <key>CFBundleShortVersionString</key>
-    <string>5.5</string>
+    <string>5.6.30</string>
     <key>CFBundleVersion</key>
-    <string>5.5</string>
+    <string>5.6.30</string>
     <key>NSHumanReadableCopyright</key>
     <string></string>
     <key>NSHighResolutionCapable</key>
@@ -29,19 +29,19 @@
     <array>
       <dict>
         <key>name</key>
-        <string>Instigator: Ctrlr</string>
+        <string>CtrlrX: CtrlrX</string>
         <key>description</key>
-        <string>Ctrlr</string>
+        <string>CtrlrX</string>
         <key>factoryFunction</key>
-        <string>CtrlrAUFactory</string>
+        <string>CtrlrXAUFactory</string>
         <key>manufacturer</key>
-        <string>inSt</string>
+        <string>cTrX</string>
         <key>type</key>
         <string>aumu</string>
         <key>subtype</key>
         <string>cTrl</string>
         <key>version</key>
-        <integer>328960</integer>
+        <integer>329246</integer>
         <key>resourceUsage</key>
         <dict>
           <key>network.client</key>

@@ -40,7 +40,7 @@ void CtrlrSysexProcessor::sysExProcessToken (const CtrlrSysexToken token, uint8 
 			break;
 
 		case MSB7bitValue:
-			*byte = (uint8)(value >> 7);
+			*byte = (uint8)((value & 0x3fff) >> 7);
 			break;
 
 		case ByteChannel4Bit:
@@ -362,7 +362,7 @@ CtrlrSysExFormulaToken CtrlrSysexProcessor::sysExIdentifyToken(const String &s)
 
 /** Checksum processors
 */
-void CtrlrSysexProcessor::checksumRolandJp8080(const CtrlrSysexToken token, MidiMessage &m)
+void CtrlrSysexProcessor::checksumRolandJp8080(const CtrlrSysexToken token, MidiMessage& m)
 {
 	/*
 	Since +5 is parameter value 1DH,
@@ -377,16 +377,16 @@ void CtrlrSysexProcessor::checksumRolandJp8080(const CtrlrSysexToken token, Midi
 	*/
 
 	const int startByte = token.getPosition() - token.getAdditionalData();
-	double chTotal		= 0.0;
-	uint8 *ptr	= (uint8 *)m.getRawData();
+	double chTotal = 0.0;
+	uint8* ptr = (uint8*)m.getRawData();
 
-	for (int i=startByte; i<token.getPosition(); i++)
+	for (int i = startByte; i < token.getPosition(); i++)
 	{
-		chTotal = chTotal + *(ptr+i);
+		chTotal = chTotal + *(ptr + i);
 	}
-	const double remainder	= fmod(chTotal, 128);
-	const uint8 ch			= (uint8)(remainder ? (128 - remainder) : 0);
-	*(ptr+token.getPosition())   = ch;
+	const double remainder = fmod(chTotal, 128);
+	const uint8 ch = (uint8)(remainder ? (128 - remainder) : 0);
+	*(ptr + token.getPosition()) = ch;
 }
 
 void CtrlrSysexProcessor::checksumWaldorfRackAttack(const CtrlrSysexToken token, MidiMessage &m)
