@@ -701,7 +701,7 @@ int	indirectOperation(const int inValue, const CtrlrSysExFormulaToken op)
 	}
 	else if (op == MSB7bitValue)
 	{
-		return (inValue >> 7);
+		return ((inValue & 0x3fff) >> 7);
 	}
 	else if (op == LSB4bitValue)
 	{

@@ -40,7 +40,7 @@ void CtrlrSysexProcessor::sysExProcessToken (const CtrlrSysexToken token, uint8 
 			break;
 
 		case MSB7bitValue:
-			*byte = (uint8)(value >> 7);
+			*byte = (uint8)((value & 0x3fff) >> 7);
 			break;
 
 		case ByteChannel4Bit:
