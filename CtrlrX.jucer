@@ -1075,10 +1075,10 @@
       <CONFIGURATIONS>
         <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="CtrlrX"
                        headerPath="../../Source&#10;../../Source/Misc&#10;../../Source/Misc/include&#10;../../Source/Misc/lua/include&#10;../../Source/Misc/luabind&#10;../../Source/Misc/libusb/include&#10;../../Source/Misc/boost&#10;../../Source/Misc/vst2sdk&#10;../../Source/MIDI&#10;../../Source/Core&#10;../../Source/Native&#10;../../Source/Plugin&#10;../../Source/UIComponents&#10;../../Source/Lua"
-                       osxArchitecture="64BitIntel"/>
+                       osxArchitecture="64BitIntel" customXcodeFlags="CODE_SIGN_IDENTITY=&quot;-&quot;, CODE_SIGN_STYLE=Automatic, DEVELOPMENT_TEAM=&quot;&quot;"/>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="CtrlrX"
                        headerPath="../../Source&#10;../../Source/Misc&#10;../../Source/Misc/include&#10;../../Source/Misc/lua/include&#10;../../Source/Misc/luabind&#10;../../Source/Misc/libusb/include&#10;../../Source/Misc/boost&#10;../../Source/Misc/vst2sdk&#10;../../Source/MIDI&#10;../../Source/Core&#10;../../Source/Native&#10;../../Source/Plugin&#10;../../Source/UIComponents&#10;../../Source/Lua"
-                       enablePluginBinaryCopyStep="0" osxArchitecture="64BitIntel"/>
+                       enablePluginBinaryCopyStep="0" osxArchitecture="64BitIntel" customXcodeFlags="CODE_SIGN_IDENTITY=&quot;-&quot;, CODE_SIGN_STYLE=Automatic, DEVELOPMENT_TEAM=&quot;&quot;"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_gui_extra" path="JUCE/modules"/>
